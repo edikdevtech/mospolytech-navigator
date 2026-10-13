@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на выбор профессии | Московский Политех</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">МосПолитех<span>.Навигатор</span></a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Главная</a>
+                <a href="about.html" class="nav__link">О проекте</a>
+                <a href="specialties.html" class="nav__link">Специальности</a>
+                <a href="test.html" class="nav__link active">Пройти тест</a>
+                <a href="contacts.html" class="nav__link">Контакты</a>
+                <a href="profile.html" class="nav__link" id="profile-link">Профиль</a>
+            </nav>
+            <div class="header__actions">
+                <button id="theme-toggle" class="btn-icon" title="Сменить тему">🌓</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main container">
+        <div id="test-container" class="test-wrapper">
+            <div id="quiz-box">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <h2 id="question-text" style="margin-top: 20px;">Вопрос 1</h2>
+                <div id="answers-box" class="answers-grid"></div>
+                <div class="quiz-navigation">
+                    <button id="btn-back" class="btn btn--outline" disabled>← Назад</button>
+                    <button id="btn-next" class="btn btn--primary" disabled>Далее →</button>
+                </div>
+            </div>
+
+            <div id="result-box" class="result-box" style="display: none;">
+                <h2>Тест завершен! 🎉</h2>
+                <div class="short-result">
+                    <p>Твое наиболее подходящее направление:</p>
+                    <h3 id="result-faculty-short" class="highlight"></h3>
+                    <p id="result-desc-short"></p>
+                </div>
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid var(--border-color);">
+                <div id="full-result-section">
+                    <h3>🔒 Развернутая рекомендация</h3>
+                    <p>Чтобы получить подробный разбор твоих сильных сторон, список конкретных специальностей и проходные баллы, войди в свой профиль.</p>
+                    <div id="locked-content" class="locked-content">
+                        <h4 id="result-faculty-full"></h4>
+                        <p id="result-desc-full"></p>
+                        <ul id="result-specialties" class="specialties-list"></ul>
+                    </div>
+                    <button id="unlock-result-btn" class="btn btn--primary" style="margin-top: 20px;">Войти / Зарегистрироваться для просмотра</button>
+                    <p id="save-message" class="success-message" style="display: none;">✅ Полный результат сохранен в твоем профиле!</p>
+                </div>
+                <a href="specialties.html" class="btn btn--outline" style="margin-top: 20px; display: inline-block;">Посмотреть все факультеты</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <div id="login-view">
+                <h2>Вход в профиль</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Электронная почта" required>
+                    <input type="password" id="login-password" placeholder="Пароль" required>
+                    <button type="submit" class="btn btn--primary btn--full">Войти</button>
+                </form>
+                <p class="auth-toggle">Нет аккаунта? <span id="show-register">Зарегистрироваться</span></p>
+            </div>
+            <div id="register-view" style="display: none;">
+                <h2>Регистрация</h2>
+                <form id="register-form">
+                    <div class="form-row">
+                        <input type="text" id="reg-firstname" placeholder="Имя" required>
+                        <input type="text" id="reg-lastname" placeholder="Фамилия" required>
+                    </div>
+                    <input type="number" id="reg-age" placeholder="Возраст" min="14" max="30" required>
+                    <input type="email" id="reg-email" placeholder="Электронная почта" required>
+                    <input type="password" id="reg-password" placeholder="Пароль" required>
+                    <button type="submit" class="btn btn--primary btn--full">Зарегистрироваться</button>
+                </form>
+                <p class="auth-toggle">Уже есть аккаунт? <span id="show-login">Войти</span></p>
+            </div>
+            <p class="modal__note">Регистрация нужна для сохранения развернутых результатов теста.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container"><p>&copy; 2026 Московский Политех. Навигатор абитуриента.</p></div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/test.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный профиль | Московский Политех</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">МосПолитех<span>.Навигатор</span></a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Главная</a>
+                <a href="about.html" class="nav__link">О проекте</a>
+                <a href="specialties.html" class="nav__link">Специальности</a>
+                <a href="test.html" class="nav__link">Пройти тест</a>
+                <a href="contacts.html" class="nav__link">Контакты</a>
+                <a href="profile.html" class="nav__link active" id="profile-link">Профиль</a>
+            </nav>
+            <div class="header__actions">
+                <button id="theme-toggle" class="btn-icon">🌓</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main container">
+        <h1 class="page-title">Личный профиль</h1>
+        
+        <!-- Сообщение для неавторизованных -->
+        <div id="not-logged-in" class="alert alert--warning" style="display: none; text-align: center; max-width: 500px; margin: 40px auto;">
+            <p>⚠️ Вы не авторизованы. <a href="index.html">Вернитесь на главную и нажмите "Профиль"</a>, чтобы войти или зарегистрироваться.</p>
+        </div>
+
+        <!-- Контент профиля (скрыт по умолчанию) -->
+        <div id="profile-content" class="profile-wrapper" style="display: none;">
+            <div class="profile-card">
+                <div class="profile-avatar-section">
+                    <div class="avatar-container">
+                        <div id="avatar-preview" class="avatar-circle">
+                            <span id="avatar-initials">?</span>
+                        </div>
+                        <label for="avatar-input" class="avatar-upload-btn" title="Загрузить фото">📷</label>
+                        <input type="file" id="avatar-input" accept="image/*" style="display: none;">
+                    </div>
+                    <h2 id="profile-fullname" class="profile-name">Имя Фамилия</h2>
+                </div>
+
+                <div class="profile-info">
+                    <div class="profile-info-row">
+                        <span class="profile-label">Возраст:</span>
+                        <span id="profile-age" class="profile-value">—</span>
+                    </div>
+                    <div class="profile-info-row">
+                        <span class="profile-label">Email:</span>
+                        <span id="profile-email" class="profile-value">—</span>
+                    </div>
+                    <div class="profile-info-row">
+                        <span class="profile-label">Пароль:</span>
+                        <span class="profile-value">••••••••</span>
+                        <button id="change-password-btn" class="btn btn--outline btn--small">Сменить</button>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <button id="logout-btn" class="btn btn--outline">Выйти из аккаунта</button>
+                </div>
+            </div>
+
+            <div class="profile-test-result">
+                <h3>📊 Результат теста</h3>
+                
+                <!-- Если тест не пройден -->
+                <div id="no-test-result" class="empty-state" style="display: none;">
+                    <p>Ты ещё не проходил тест. <a href="test.html">Пройти тест</a></p>
+                </div>
+                
+                <!-- Если тест пройден -->
+                <div id="test-result-display" class="result-card" style="display: none;">
+                    <h4 id="result-sphere-name" class="highlight"></h4>
+                    <p id="result-sphere-desc"></p>
+                    <h5 style="margin-top: 20px;">Рекомендуемые факультеты:</h5>
+                    <ul id="result-faculties-list" class="specialties-list"></ul>
+                    <div class="profile-actions">
+                        <a href="test.html" class="btn btn--primary">Пройти тест заново</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модалка смены пароля -->
+    <div id="password-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Смена пароля</h2>
+            <form id="password-form">
+                <input type="password" id="old-password" placeholder="Текущий пароль" required>
+                <input type="password" id="new-password" placeholder="Новый пароль" required minlength="4">
+                <input type="password" id="confirm-password" placeholder="Подтвердите новый пароль" required>
+                <button type="submit" class="btn btn--primary btn--full">Сохранить новый пароль</button>
+                <p id="password-error" class="error-message" style="display: none; color: #dc3545; margin-top: 10px; text-align: center;"></p>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container"><p>&copy; 2026 Московский Политех. Навигатор абитуриента.</p></div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

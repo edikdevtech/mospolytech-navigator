@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Специальности | Московский Политех</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">МосПолитех<span>.Навигатор</span></a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Главная</a>
+                <a href="about.html" class="nav__link">О проекте</a>
+                <a href="specialties.html" class="nav__link active">Специальности</a>
+                <a href="test.html" class="nav__link">Пройти тест</a>
+                <a href="contacts.html" class="nav__link">Контакты</a>
+                <a href="profile.html" class="nav__link" id="profile-link">Профиль</a>
+            </nav>
+            <div class="header__actions">
+                <button id="theme-toggle" class="btn-icon" title="Сменить тему">🌓</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main container">
+        <h1 class="page-title">Факультеты и институты Московского Политеха</h1>
+        <div class="cards-grid">
+            <div class="card"><h3>🚀 Передовая инженерная школа технологического лидерства ФДР</h3><p>Управление инновациями и технологическое лидерство.</p><span class="tag">Инновации</span></div>
+            <div class="card"><h3>🎨 Передовая школа инженерного дизайна</h3><p>Промышленный и транспортный дизайн, CAD-моделирование.</p><span class="tag">Дизайн</span></div>
+            <div class="card"><h3>🚗 Транспортный факультет</h3><p>Гоночный инжиниринг, логистика, наземные транспортные системы.</p><span class="tag">Транспорт</span></div>
+            <div class="card"><h3>💻 Факультет информационных технологий</h3><p>Программирование, ИБ, ИИ и информационные системы.</p><span class="tag">IT</span></div>
+            <div class="card"><h3>🧪 Факультет химической технологии и биотехнологии</h3><p>Химия, биотехнологии, техносферная безопасность.</p><span class="tag">Наука</span></div>
+            <div class="card"><h3>📈 Факультет экономики и управления</h3><p>Менеджмент, экономика, управление персоналом, ГМУ.</p><span class="tag">Бизнес</span></div>
+            <div class="card"><h3>⚙️ Факультет машиностроения</h3><p>Робототехника, машиностроение, конструкторская деятельность.</p><span class="tag">Инженерия</span></div>
+            <div class="card"><h3>🏙️ Факультет урбанистики и городского хозяйства</h3><p>Городское строительство, землеустройство, умные города.</p><span class="tag">Урбанистика</span></div>
+            <div class="card"><h3>🖌️ Факультет графики и искусства книги им. В.А. Фаворского</h3><p>Иллюстрация, графический дизайн, искусство шрифта.</p><span class="tag">Арт</span></div>
+            <div class="card"><h3>📰 Факультет издательского дела и журналистики</h3><p>Журналистика, реклама, связи с общественностью, издательское дело.</p><span class="tag">Медиа</span></div>
+            <div class="card"><h3>🖨️ Полиграфический факультет</h3><p>Технологии полиграфии, упаковки, 3D-печать и допечатная подготовка.</p><span class="tag">Производство</span></div>
+            <div class="card"><h3>🔬 Факультет базовых компетенций</h3><p>Фундаментальная математика, физика и информатика.</p><span class="tag">Фундаментальная наука</span></div>
+            <div class="card"><h3>🛠️ Инженерная школа</h3><p>Прикладные инженерные задачи и проектная деятельность.</p><span class="tag">Инженерия</span></div>
+            <div class="card"><h3>🎓 Факультет довузовской подготовки</h3><p>Подготовительные курсы и программы для студентов колледжей.</p><span class="tag">Подготовка</span></div>
+        </div>
+    </main>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <div id="login-view">
+                <h2>Вход в профиль</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Электронная почта" required>
+                    <input type="password" id="login-password" placeholder="Пароль" required>
+                    <button type="submit" class="btn btn--primary btn--full">Войти</button>
+                </form>
+                <p class="auth-toggle">Нет аккаунта? <span id="show-register">Зарегистрироваться</span></p>
+            </div>
+            <div id="register-view" style="display: none;">
+                <h2>Регистрация</h2>
+                <form id="register-form">
+                    <div class="form-row">
+                        <input type="text" id="reg-firstname" placeholder="Имя" required>
+                        <input type="text" id="reg-lastname" placeholder="Фамилия" required>
+                    </div>
+                    <input type="number" id="reg-age" placeholder="Возраст" min="14" max="30" required>
+                    <input type="email" id="reg-email" placeholder="Электронная почта" required>
+                    <input type="password" id="reg-password" placeholder="Пароль" required>
+                    <button type="submit" class="btn btn--primary btn--full">Зарегистрироваться</button>
+                </form>
+                <p class="auth-toggle">Уже есть аккаунт? <span id="show-login">Войти</span></p>
+            </div>
+            <p class="modal__note">Регистрация нужна для сохранения развернутых результатов теста.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container"><p>&copy; 2026 Московский Политех. Навигатор абитуриента.</p></div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

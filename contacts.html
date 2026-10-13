@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Московский Политех</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">МосПолитех<span>.Навигатор</span></a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Главная</a>
+                <a href="about.html" class="nav__link">О проекте</a>
+                <a href="specialties.html" class="nav__link">Специальности</a>
+                <a href="test.html" class="nav__link">Пройти тест</a>
+                <a href="contacts.html" class="nav__link active">Контакты</a>
+                <a href="profile.html" class="nav__link" id="profile-link">Профиль</a>
+            </nav>
+            <div class="header__actions">
+                <button id="theme-toggle" class="btn-icon" title="Сменить тему">🌓</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main container">
+        <h1 class="page-title">Контакты приемной комиссии</h1>
+        <div class="content-block" style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <div class="card" style="text-align: left;">
+                <h3>📍 Адрес главного корпуса:</h3>
+                <p>г. Москва, ул. Большая Семеновская, д. 38</p><br>
+                <h3>📞 Телефон горячей линии:</h3>
+                <p>+7 (495) 223-05-23</p><br>
+                <h3>✉️ Электронная почта:</h3>
+                <p>pk@mospolytech.ru</p><br>
+                <h3>🌐 Официальный сайт:</h3>
+                <p><a href="https://mospolytech.ru" target="_blank" style="color: var(--accent-color);">mospolytech.ru</a></p>
+            </div>
+        </div>
+    </main>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <div id="login-view">
+                <h2>Вход в профиль</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Электронная почта" required>
+                    <input type="password" id="login-password" placeholder="Пароль" required>
+                    <button type="submit" class="btn btn--primary btn--full">Войти</button>
+                </form>
+                <p class="auth-toggle">Нет аккаунта? <span id="show-register">Зарегистрироваться</span></p>
+            </div>
+            <div id="register-view" style="display: none;">
+                <h2>Регистрация</h2>
+                <form id="register-form">
+                    <div class="form-row">
+                        <input type="text" id="reg-firstname" placeholder="Имя" required>
+                        <input type="text" id="reg-lastname" placeholder="Фамилия" required>
+                    </div>
+                    <input type="number" id="reg-age" placeholder="Возраст" min="14" max="30" required>
+                    <input type="email" id="reg-email" placeholder="Электронная почта" required>
+                    <input type="password" id="reg-password" placeholder="Пароль" required>
+                    <button type="submit" class="btn btn--primary btn--full">Зарегистрироваться</button>
+                </form>
+                <p class="auth-toggle">Уже есть аккаунт? <span id="show-login">Войти</span></p>
+            </div>
+            <p class="modal__note">Регистрация нужна для сохранения развернутых результатов теста.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container"><p>&copy; 2026 Московский Политех. Навигатор абитуриента.</p></div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
