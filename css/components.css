@@ -121,8 +121,7 @@
     .cursor-follower { display: none !important; }
 }
 
-/* Адаптация счетчика LiveInternet в подвале */
-/* .footer-counter {
+.footer-counter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,4 +132,4 @@
 .footer-counter img, .footer-counter a {
     max-width: 100%;
     height: auto;
-} */
+}

@@ -96,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         userAnswers[currentStep] = choice;
         const buttons = answersBox.querySelectorAll('.answer-btn');
         buttons.forEach((btn, i) => {
-            // i=0 это 'a', i=1 это 'b'
             const btnChoice = i === 0 ? 'a' : 'b';
             if (btnChoice === choice) btn.classList.add('selected');
             else btn.classList.remove('selected');
@@ -156,6 +155,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         quizBox.style.display = 'none';
         resultBox.style.display = 'block';
+
+        // ============================================================
+        // === ОТПРАВКА СОБЫТИЯ В РАМБЛЕР (Задания 8 и 9) ===
+        // Фиксируем виртуальный переход на страницу "/test-completed"
+        if (typeof _top100q !== 'undefined') {
+            _top100q.push(function() {
+                top100.hit({
+                    url: "/test-completed",
+                    title: "Завершение теста"
+                });
+            });
+        }
+        // ============================================================
 
         // Сохраняем результат в профиль пользователя
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
