@@ -157,13 +157,22 @@ document.addEventListener('DOMContentLoaded', () => {
         resultBox.style.display = 'block';
 
         // ============================================================
-        // === ОТПРАВКА СОБЫТИЯ В РАМБЛЕР (Задания 8 и 9) ===
-        // Фиксируем виртуальный переход на страницу "/test-completed"
+        // === ОТПРАВКА СОБЫТИЯ И КОНВЕРСИИ В РАМБЛЕР (Задания 8 и 9) ===
         if (typeof _top100q !== 'undefined') {
             _top100q.push(function() {
+                // 1. Отправляем кастомное событие (для Задания 8)
+                top100.hit({
+                    event: "test_completed",
+                    event_category: "user_action",
+                    event_action: "finish_quiz",
+                    event_value: resultData.name 
+                });
+                
+                // 2. Отправляем виртуальный просмотр как конверсию (для Задания 9)
+                // В базовом Рамблере это основной способ трекинга целей
                 top100.hit({
                     url: "/test-completed",
-                    title: "Завершение теста"
+                    title: "Завершение теста: " + resultData.name
                 });
             });
         }
