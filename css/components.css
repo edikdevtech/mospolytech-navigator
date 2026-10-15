@@ -1,4 +1,4 @@
-/* Кнопки */
+/* === КНОПКИ === */
 .btn { 
     padding: 10px 20px; 
     border: none; 
@@ -18,9 +18,10 @@
 .btn--outline:hover:not(:disabled) { background-color: var(--accent-color); color: white; }
 .btn--large { padding: 15px 30px; font-size: 1.1rem; }
 .btn--full { width: 100%; }
+.btn--small { padding: 6px 12px; font-size: 0.85rem; }
 .btn-icon { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-color); }
 
-/* Карточки */
+/* === КАРТОЧКИ === */
 .cards-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -48,7 +49,7 @@
     margin-right: 5px; 
 }
 
-/* Модальное окно */
+/* === МОДАЛЬНОЕ ОКНО === */
 .modal { 
     display: none; 
     position: fixed; 
@@ -102,7 +103,7 @@
 .auth-toggle span { color: var(--accent-color); cursor: pointer; font-weight: 600; text-decoration: underline; }
 .modal__note { font-size: 0.8rem; color: var(--secondary-color); margin-top: 20px; text-align: center; }
 
-/* Курсор */
+/* === КУРСОР === */
 .cursor-follower { 
     position: fixed; 
     width: 20px; height: 20px; 
@@ -115,21 +116,65 @@
     opacity: 0; /* Скрыт по умолчанию, чтобы не прыгать из (0,0) */
 }
 
-/* Адаптив для модалки и курсора */
-@media (max-width: 480px) {
-    .form-row { flex-direction: column; gap: 0; }
-    .cursor-follower { display: none !important; }
-}
-
+/* === УЛУЧШЕННЫЙ ДИЗАЙН БЛОКА СЧЕТЧИКОВ В ПОДВАЛЕ === */
 .footer-counter {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 15px;
+    align-items: flex-start; /* Выравнивание по верхнему краю для аккуратности */
+    margin-top: 25px;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 25px; /* Расстояние между счетчиками */
+    
+    background-color: rgba(128, 128, 128, 0.08); 
+    padding: 15px 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
 }
-.footer-counter img, .footer-counter a {
-    max-width: 100%;
-    height: auto;
+
+/* Каждый счетчик как отдельный вертикальный блок */
+.counter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.3s ease;
+    line-height: 1.2;
+}
+
+.counter-item img {
+    border: 0 !important;
+    opacity: 0.75;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    max-height: 31px;
+    width: auto;
+    display: block;
+    margin-bottom: 6px; /* Отступ от картинки до текста */
+}
+
+/* Эффект при наведении на весь блок счетчика */
+.counter-item:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.counter-item:hover .counter-label {
+    color: var(--accent-color);
+}
+
+/* === АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ === */
+@media (max-width: 480px) {
+    .form-row { flex-direction: column; gap: 0; }
+    .cursor-follower { display: none !important; }
+    
+    .footer-counter {
+        justify-content: space-around;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+    .counter-item {
+        flex: 1 1 30%; /* Равномерное распределение на маленьком экране */
+    }
 }

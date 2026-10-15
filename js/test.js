@@ -63,6 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!questionText) return; // Выход, если это не страница теста
 
+    // === ЦЕЛЬ 1 (Top.Mail.Ru): Пользователь начал проходить тест ===
+    if (typeof _tmr !== 'undefined') {
+        _tmr.push({id: "3803659", type: "reachGoal", goal: "test_started"});
+    }
+
     function renderQuestion() {
         const q = questions[currentStep];
         questionText.textContent = `Вопрос ${currentStep + 1} из ${questions.length}: Что тебе ближе?`;
@@ -169,12 +174,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 
                 // 2. Отправляем виртуальный просмотр как конверсию (для Задания 9)
-                // В базовом Рамблере это основной способ трекинга целей
                 top100.hit({
                     url: "/test-completed",
                     title: "Завершение теста: " + resultData.name
                 });
             });
+        }
+        // ============================================================
+
+        // === ЦЕЛЬ 2 (Top.Mail.Ru): Пользователь успешно завершил тест ===
+        if (typeof _tmr !== 'undefined') {
+            _tmr.push({id: "3803659", type: "reachGoal", goal: "test_completed"});
         }
         // ============================================================
 
