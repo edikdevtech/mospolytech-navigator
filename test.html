@@ -140,42 +140,39 @@
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Московский Политех. Навигатор абитуриента. Учебный проект.</p>
+      <div class="container">
+        <p>&copy; 2026 Московский Политех. Навигатор абитуриента. Учебный проект.</p>
             
-            <div class="footer-counter">
-                <!-- LiveInternet counter -->
-                <a href="https://www.liveinternet.ru/click" target="_blank">
-                    <img id="licnt542B" width="88" height="31" style="border:0" title="LiveInternet"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" alt=""/>
-                </a>
-                <script>
-                (function(d,s){
-                    d.getElementById("licnt542B").src=
-                    "https://counter.yadro.ru/hit?t52.1;r"+escape(d.referrer)+
-                    ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
-                    (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
-                    ";h"+escape(d.title.substring(0,150))+";"+Math.random()
-                })(document,screen)
-                </script>
+        <div class="footer-counter">
+          <!-- LiveInternet counter -->
+          <a href="https://www.liveinternet.ru/click" target="_blank" class="counter-item">
+              <img id="licnt542B" width="88" height="31" style="border:0" title="LiveInternet"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" alt="LiveInternet"/>
+              <span class="counter-label">LiveInternet</span>
+          </a>
+          <script>
+          (function(d,s){
+              d.getElementById("licnt542B").src=
+              "https://counter.yadro.ru/hit?t52.1;r"+escape(d.referrer)+
+              ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+              (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+              ";h"+escape(d.title.substring(0,150))+";"+Math.random()
+          })(document,screen)
+          </script>
 
-                <!-- Top100 (Rambler) Counter -->
-                <a href="https://top100.rambler.ru/top100/" target="_blank">
-                    <img src="https://counter.rambler.ru/top100.cnt?pid=7752939" alt="Топ-100" style="border:0; height:31px; width:88px;" />
-                </a>
+          <!-- Top100 (Rambler) Counter -->
+          <a href="https://top100.rambler.ru/top100/" target="_blank" class="counter-item">
+              <img src="https://counter.rambler.ru/top100.cnt?pid=7752939" alt="Топ-100" style="border: 1px black solid; height:31px; width:88px;" />
+              <span class="counter-label">Rambler</span>
+          </a>
 
-                <!-- Top.Mail.Ru counter (видимая часть) -->
-                <a href="https://top.mail.ru/" target="_blank"
-                style="font-family: Arial, sans-serif; 
-                  font-size: 15px; color: #000000; 
-                  text-decoration: none; 
-                  border: 1px #000 solid;">
-                  <img src="https://top-fwz1.mail.ru/counter?id=3803659;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
-                  MyTracker
-                </a>
-                <!-- /Top.Mail.Ru -->
-            </div>
+          <!-- Top.Mail.Ru counter -->
+          <a href="https://top.mail.ru/" target="_blank" class="counter-item">
+              <img src="https://top-fwz1.mail.ru/counter?id=3803659;js=na" alt="Top.Mail.Ru" style="border:0; height:31px; width:88px;" />
+              <span class="counter-label">MyTracker</span>
+          </a>
         </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
